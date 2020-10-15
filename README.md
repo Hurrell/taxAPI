@@ -100,3 +100,9 @@ This is a work in progress, and while further additions are planned, this API:
 ### Errors
 
 Please make the owner aware of any errors or outdated info and this will be addressed as soon as possible.
+
+### Disclaimer
+
+This tool is unofficial, not backed by any uk governmental body or legal/accountancy service, and is provided for illustrative purposes only. It should not be relied apon. Please seek professional advice before making financial decisions.
+
+Most info for this tool was sourced from [employedandselfemployed.co.uk](https://www.employedandselfemployed.co.uk) which provides an excellent and more comprehensive front-end tax calculator.
