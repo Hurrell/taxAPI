@@ -3,38 +3,55 @@ extends layout
 block content
   main
     h1= title
-    p A guide to using this API can be found on #[a(href="http://www.github.com/Hurrell/taxAPI") github].
-    p You can also use the form below to try it out.
-    form(action="/api", method="post")
-        fieldset
-            label(for="income") Income
-            input(type="number" name="income")
-        fieldset
-            label(for="expenses") Expenses
-            input(type="number" name="expenses")
-        fieldset
-            label(for="age") Age
-            input(type="age" name="age")
-        fieldset
-            label(for="married") Married
-            input(type="checkbox" name="married")
-        fieldset
-            label(for="blind") Blind
-            input(type="checkbox" name="blind")
-        fieldset
-            label(for="noNI") No National Insurance
-            input(type="checkbox" name="noNI")
-        fieldset
-            label(for="deferClass2") Defer class 2 National Insurance
-            input(type="checkbox" name="deferClass2")
-        fieldset
-            label(for="studentLoan") Select a Student Loan plan.
-            select(name="studentLoan" id="studentLoan")
-                option( value="false") No Student Loan
-                option( value="plan1") Plan 1 
-                option( value="plan2") Plan 2 
-        fieldset
-            label(for="taxYear") Select your Tax Year.
-            select(name="taxYear" id="taxYear")
-                option( value="2020/21") 2020/21
-        button(type="submit") Calculate
+    h2 An API for calculating your UK self employed taxes.
+    div(class="content")
+        div
+            p A guide to using this API can be found on #[a(href="http://www.github.com/Hurrell/taxAPI") github].
+            p You can also use the form below to try it out.
+        div
+
+            form(action="/api", method="post")
+                fieldset
+                div(class="form-row")
+                    label(for="income") Income
+                    input(type="number" name="income" required min=0)
+                fieldset
+                div(class="form-row")
+                    label(for="expenses") Expenses
+                    input(type="number" name="expenses" min=0)
+                fieldset
+                div(class="form-row")
+                    label(for="age") Age
+                    input(type="age" name="age" min=0 max=125)
+                fieldset
+                div(class="form-row")
+                    label(for="married") Married
+                    input(type="checkbox" name="married")
+                fieldset
+                div(class="form-row")
+                    label(for="blind") Blind
+                    input(type="checkbox" name="blind")
+                fieldset
+                div(class="form-row")
+                    label(for="noNI") No National Insurance
+                    input(type="checkbox" name="noNI")
+                fieldset
+                div(class="form-row")
+                    label(for="deferClass2") Defer class 2 National Insurance
+                    input(type="checkbox" name="deferClass2")
+                fieldset
+                div(class="form-row")
+                    label(for="studentLoan") Select a Student Loan plan.
+                    select(name="studentLoan" id="studentLoan")
+                        option( value="false") No Student Loan
+                        option( value="plan1") Plan 1 
+                        option( value="plan2") Plan 2 
+                fieldset
+                div(class="form-row")
+                    label(for="taxYear") Select your Tax Year.
+                    select(name="taxYear" id="taxYear")
+                        option( value="2020/21") 2020/21
+                div(class="form-submit")
+                  button(type="submit") Calculate
+    footer
+      p Disclaimer: this tool is for illustrative purposes only. Any financial decisions should be based on advice from a certified professional.
